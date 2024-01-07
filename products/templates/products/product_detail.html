@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+
+{% block page_title %}Detail{% endblock page_title %}
+
+{% block content %}
+<div class="container">
+    <h1>Products Detail</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">تومان{{ product.price }}</p>
+        </div>
+</div>
+{% endblock content %}
