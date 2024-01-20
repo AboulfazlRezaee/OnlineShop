@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'allauth',
     'allauth.account',
+    'rosetta',
 
     #my apps
     'accounts',
@@ -143,6 +144,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa'
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('fa', 'Persian'),
+]
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Tehran'
