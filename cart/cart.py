@@ -60,15 +60,13 @@ class Cart:
             cart[str(product.id)]['product_obj'] = product
 
         for item in cart.values():
-            # item['price'] = item['product'].price
-            # item['total_price'] = item['price'] * item['quantity']
             yield item
 
     def __len__(self):
         """
         Count all items in the cart
         """
-        
+
         return len(self.cart.keys())
 
     def clear(self):
