@@ -24,4 +24,15 @@ def add_to_cart_view(request, product_id):
         cart.add(product, quantity)
 
     messages.success(request, 'کالا با موفقیت در سبد خرید شما اضافه شد.')
+
+    return redirect('cart:cart_detail')
+
+def remove_from_cart(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=product_id)
+
+    cart.remove(product)
+
+    messages.warning(request, 'کالا با موفقیت از سبد خرید شما حذف شد.')
+
     return redirect('cart:cart_detail')
