@@ -11,6 +11,12 @@ def cart_detail_view(request):
     cart = Cart(request)
     context = {'cart': cart}
 
+    for item in cart:
+        item['update_quantity_form'] = AddToCartProductForm(initial={
+            'quantity': item['quantity'],
+              'inplace': True,
+              })
+
     return render(request, 'cart/cart_detail.html', context)
 
 def add_to_cart_view(request, product_id):
@@ -21,7 +27,7 @@ def add_to_cart_view(request, product_id):
     if form.is_valid():
         cleaned_data = form.cleaned_data
         quantity = cleaned_data['quantity']
-        cart.add(product, quantity)
+        cart.add(product, quantity, replace_current_quantity=cleaned_data['inplace'])
 
     messages.success(request, 'کالا با موفقیت در سبد خرید شما اضافه شد.')
 
