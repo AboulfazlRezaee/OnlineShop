@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html>
@@ -29,18 +30,7 @@
 
     <body dir='rtl'>
         
-        {% comment %} <div class="mt-4 mb-4">
-
-            {% if user.is_authenticated %}
-                <span>Hello {{user.email}}</span> || 
-                <a href="{% url 'account_logout' %}" class="btn btn-outline-danger">Logout</a>
-            {% else %}
-            <a href="{% url 'account_login' %}" class="btn btn-outline-success">Login</a>
-            <a href="{% url 'account_signup' %}" class="btn btn-outline-primary">Signup</a>
-            {% endif %}
-        </div>  {% endcomment %}
-
-              <!-- Header Start -->
+    <!-- Header Start -->
     <header class="header">
         <div class="header-inner fixed-header">
             <div class="container">
@@ -50,7 +40,7 @@
                             <div class="site-branding" style="margin-right: 30px;">
                                 <a href="{%url 'home'%}" class="logo">
                                     <figure class="logo--normal d-none d-sm-block">
-                                        <img class="px-5" src="{% static 'img/codingyar_logo.png' %}" style="max-height: 50px; margin-bottom: -15px;" alt="Logo">
+                                        <img class="px-5" src="{% static 'img/Ecommerce_1220.png' %}" style="max-height: 50px; margin-bottom: -15px;" alt="Logo">
                                     </figure>
                                 </a>
                             </div>
@@ -58,24 +48,19 @@
                                 <ul class="mainmenu d-lg-flex jusity-content-end jusity-content-lg-start pt-4">
                                     <li class="mainmenu__item menu-item-has-children active">
                                         <a href="{%url 'product_list'%}" class="mainmenu__link">
-                                            <span class="mm-text">فروشگاه</span>
+                                            <span class="mm-text">{% trans "Shop" %}</span>
                                         </a>
                                     </li>
                                     <li class="mainmenu__item menu-item-has-children">
                                         <a href="#" class="mainmenu__link">
-                                            <span class="mm-text">وبلاگ</span>
+                                            <span class="mm-text">{% trans 'Blog' %}</span>
                                         </a>
                                     </li>
                                     <li class="mainmenu__item menu-item-has-children">
                                         <a href="#" class="mainmenu__link">
-                                            <span class="mm-text">صفحات</span>
+                                            <span class="mm-text">{% trans 'Pages' %}</span>
                                         </a>
                                      </li>
-                                    {% comment %} <li class="mainmenu__item">
-                                        <a href="contact-us.html" class="mainmenu__link">
-                                            <span class="mm-text">تماس با ما</span>
-                                        </a>
-                                    </li> {% endcomment %}
                                 </ul>
                             </div>
                         </nav>
@@ -88,28 +73,38 @@
                                 </a>
                             </li>
                             <li class="header-toolbar__item mini-cart-item">
-                                <a href="{% url 'cart:cart_detail' %}" class="header-toolbar__btn toolbar-btn mini-cart-btn">
+                                <a href="#miniCart" class="header-toolbar__btn toolbar-btn mini-cart-btn">
                                     <i class="flaticon flaticon-shopping-cart"></i>
-                                    <sup class="mini-cart-count">2</sup>
+                                    <sup class="mini-cart-count">{{ cart|length }}</sup>
                                 </a>
                             </li>
                             <li class="header-toolbar__item user-info">
-                                <a href="my-account.html" class="header-toolbar__btn">
-                                    <i class="flaticon flaticon-user"></i>
+                                
+                                    <i class="flaticon flaticon-user header-toolbar__btn"></i>
                                 </a>
                                 <ul class="user-info-menu">
-                                    <li>
-                                        <a class="text-right" href="my-account.html">حساب کاربری</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-right" href="cart.html">سبد خرید</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-right" href="wishlist.html">علاقه مندی ها</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-right" href="order-tracking.html">تاریخچه سفارشات</a>
-                                    </li>
+                                    
+                                    {% if user.is_authenticated %}
+                                        <li>
+                                            <a class="text-right" href="my-account.html">{% trans 'Account' %}</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-right" href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-right" href="wishlist.html">{% trans 'Favorite' %}</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-right" href="order-tracking.html">{% trans "Order history" %}</a>
+                                        </li>
+                                    {% else %}
+                                        <li>
+                                            <a class="text-right" href="{% url 'account_login' %}">{% trans "Login" %}</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-right" href="{% url 'account_signup' %}">{% trans 'Signup' %}</a>
+                                        </li>
+                                    {% endif %}                                       
                                 </ul>
                             </li>
                             <li class="header-toolbar__item">
@@ -130,6 +125,27 @@
     </header>
     <!-- Header End -->
 
+
+    <!-- Search form Popup Start -->
+    <div class="searchform__popup" id="searchForm">
+        <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+        <div class="searchform__body">
+            <p>{% trans "Enter Your phrase in the Box" %}</p>
+            <form class="searchform">
+                <input type="text" name="popup-search" id="popup-search" class="searchform__input" placeholder="جستجو در بین محصولات...">
+                <button type="submit" class="searchform__submit"><i class="flaticon flaticon-magnifying-glass-icon"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- Search form Popup End -->
+
+    {% include 'cart/cart_sidebar.html' %}
+
+    <!-- Global Overlay Start -->
+    <div class="ShoppingYar-global-overlay"></div>
+    <!-- Global Overlay End -->
+
+
     {% if messages %}
         <div class="container">
             {% for message in messages %}
@@ -139,6 +155,16 @@
             {% endfor %}
         </div>
     {% endif %}
+
+    <!-- Preloader Start -->
+  <div class="ShoppingYar-preloader active">
+      <div class="ShoppingYar-preloader-inner h-100 d-flex align-items-center justify-content-center">
+          <div class="ShoppingYar-child ShoppingYar-bounce1"></div>
+          <div class="ShoppingYar-child ShoppingYar-bounce2"></div>
+          <div class="ShoppingYar-child zuka-bounce3"></div>
+      </div>
+  </div>
+  <!-- Preloader End --> 
 
 
     {% block content %}
@@ -154,19 +180,19 @@
                     <div class="col-lg-9 text-center">
                         <div class="footer-widget mb--50">
                             <div class="textwidget">
-                                <img src="{% static 'img/codingyar_logo.png' %}" alt="Logo">
+                                <img src="{% static 'img/Ecommerce_1220.png' %}" alt="Logo">
                             </div>
                         </div>
                         <div class="footer-widget mb--50 pb--1">
                             <ul class="footer-menu">
                                 <li>
-                                    <a href="">درباره ما</a>
+                                    <a href="">{% trans "About Us" %}</a>
                                 </li>
                                 <li>
-                                    <a href="">قوانین و مقررات</a>
+                                    <a href="">{% trans 'Terms and Conditions' %}</a> | 
                                 </li>
                                 <li>
-                                    <a href="">تماس با ما</a>
+                                    <a href="">{% trans "Contact Us" %}</a>
                                 </li>
                             </ul>
                         </div>

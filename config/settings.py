@@ -86,6 +86,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #Custom Context Processors
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -151,6 +153,12 @@ LANGUAGES = [
     ('en', 'English'),
     ('fa', 'Persian'),
 ]
+
+USE_I18N = True
+
+# LOCALE_PATHS = (
+# os.path.join(BASE_DIR, 'locale'),
+# )
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Tehran'

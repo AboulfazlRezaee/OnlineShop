@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 23:13+0330\n"
-"PO-Revision-Date: 2024-01-25 23:14+0330\n"
+"POT-Creation-Date: 2024-01-27 17:15+0330\n"
+"PO-Revision-Date: 2024-01-27 17:16+0330\n"
 "Last-Translator: Abolfazl Rezaee <rezaee.aboulfazl@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -53,10 +53,13 @@ msgstr "توضیحات محصول"
 
 #: .\templates\products\product_detail.html:41
 #: .\templates\products\product_detail.html:43
+#: .\templates\products\product_list.html:59
+#: .\templates\products\product_list.html:62
 msgid "$"
 msgstr "تومان"
 
 #: .\templates\products\product_detail.html:53
+#: .\templates\products\product_list.html:65
 msgid "Add to Cart"
 msgstr "اضافه به سبد خرید"
 
@@ -84,13 +87,37 @@ msgstr "زنانه"
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:152
+#: .\templates\products\product_detail.html:154
 msgid "Write Your Comment"
 msgstr "نظر خودرا بنویسید"
 
-#: .\templates\products\product_detail.html:161
+#: .\templates\products\product_detail.html:162
 msgid "Submit"
 msgstr "ارسال"
+
+#: .\templates\products\product_detail.html:168
+msgid "plesae login that can you submit your comment."
+msgstr "لطفا برای نوشتن دیدگاه خود وارد حساب کاربری خود شوید."
+
+#: .\templates\products\product_detail.html:171
+msgid "Login"
+msgstr "ورود"
+
+#: .\templates\products\product_list.html:52
+msgid "Special Discount"
+msgstr "تخفیف ویژه"
+
+#: .\templates\products\product_list.html:107
+msgid "About Us"
+msgstr "درباره ما"
+
+#: .\templates\products\product_list.html:110
+msgid "Terms and Conditions"
+msgstr "قوانین و مقرارات"
+
+#: .\templates\products\product_list.html:113
+msgid "Contact Us"
+msgstr "تماس با ما"
 
 #: .\views.py:41
 msgid "Your Comment added Successfully."
@@ -99,3 +126,27 @@ msgstr "دیدگاه شما با موفقیت ثبت شد."
 #: .\views.py:43
 msgid "Form is not valid. Please check your input."
 msgstr "لطفا فرم ثبت دیدگاه را دقیق پر کنید"
+
+#~ msgid "Shop"
+#~ msgstr "فروشگاه"
+
+#~ msgid "Blog"
+#~ msgstr "وبلاگ"
+
+#~ msgid "Pages"
+#~ msgstr "صفحات"
+
+#~ msgid "Account"
+#~ msgstr "حساب کاربری"
+
+#~ msgid "Logout"
+#~ msgstr "خروج"
+
+#~ msgid "Favorite"
+#~ msgstr "علاقه مندی ها"
+
+#~ msgid "Order history"
+#~ msgstr "تاریخچه سفارشات"
+
+#~ msgid "Signup"
+#~ msgstr "ثبت نام"

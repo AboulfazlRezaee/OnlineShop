@@ -149,20 +149,30 @@
                                             <div class="row">
                                                 <div class="border-top py-5 w-100"></div>
                                                 <div class="col-lg-8 m-auto">
-                                                    <span class="reply-title pull-right">{% trans 'Write Your Comment' %}</span>
-                                                    <br>
-
-                                                    <form action="{% url 'comment_create' product.id %}" method="POST">
-                                                        {% csrf_token %}
-                                                        {{ comment_form|crispy }}
-                                                        <div class="form__group">
-                                                            <div class="form-row">
-                                                                <div class="col-12">
-                                                                    <input type="submit" value="{% trans 'Submit' %}" class="btn-submit">
+                                                    
+                                                    {% if user.is_authenticated %}
+                                                        <span class="reply-title pull-right">{% trans 'Write Your Comment' %}</span>
+                                                        <br>
+                                                        <form action="{% url 'comment_create' product.id %}" method="POST">
+                                                            {% csrf_token %}
+                                                            {{ comment_form|crispy }}
+                                                            <div class="form__group">
+                                                                <div class="form-row">
+                                                                    <div class="col-12">
+                                                                        <input type="submit" value="{% trans 'Submit' %}" class="btn-submit">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </form>
+                                                        </form>
+                                                    {% else %}
+                                                        <p>{% trans 'plesae login that can you submit your comment.' %}</p>
+                                                        <a href="{% url 'account_login' %}">
+                                                            <button class="btn btn-bg-red btn-color-white btn-hover-2">
+                                                                {% trans 'Login' %}
+                                                            </button>
+                                                        </a>
+                                                    {% endif %}
+                                                        
 
                                                 </div>
                                             </div>

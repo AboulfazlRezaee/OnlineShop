@@ -78,7 +78,7 @@ class Cart:
         Count all items in the cart
         """
 
-        return len(self.cart.keys())
+        return sum(item['quantity'] for item in self.cart.values())
 
     def clear(self):
         """

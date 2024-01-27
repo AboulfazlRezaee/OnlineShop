@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load i18n %}
 
 
 
@@ -8,7 +9,19 @@
     
 
 {% block content %}
-    <h1>Home page</h1>
-    <p>Welcome to my website!</p>
+    <div class="wrapper">
+        <div class="main-content-wrapper container-fluid">
+            <div class="shop-page-wrapper shop-fullwidth">
+                    <h1>Home page</h1>
+                    <p>Welcome to my website!</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Global Overlay Start -->
+    <div class="ShoppingYar-global-overlay"></div>
+    <!-- Global Overlay End -->
+
 
 {% endblock content %}
