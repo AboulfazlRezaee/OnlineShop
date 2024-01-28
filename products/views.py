@@ -13,6 +13,10 @@ class ProductListView(generic.ListView):
     queryset = Product.objects.filter(active=True)
     template_name = 'products/product_list.html'
     context_object_name = 'products'
+    #sort by datetime_update
+    ordering = ['-datetime_modified']
+    paginate_by = 10
+    
 
 class ProductDetailView(generic.DetailView):
     model = Product
