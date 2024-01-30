@@ -3,14 +3,15 @@ from django.utils import timezone
 from django.contrib.auth import get_user_model
 from django.db.models.query import QuerySet
 from django.utils.translation import gettext_lazy as _
-
 from django.shortcuts import reverse
+
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 class Product(models.Model):
     title = models.CharField(max_length=120, verbose_name=_('title'))
-    description = models.TextField(_('Description'))
+    description = RichTextField(_('Description'))
     price = models.PositiveIntegerField(default=50000, verbose_name=_('current-price'))
     s_price = models.PositiveIntegerField(default=0, null=True, blank=True, verbose_name=_('last-price'))
     image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover', blank=True,)
