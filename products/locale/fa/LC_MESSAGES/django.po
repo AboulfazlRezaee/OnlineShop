@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 12:24+0330\n"
-"PO-Revision-Date: 2024-01-27 22:41+0330\n"
+"POT-Creation-Date: 2024-01-30 12:54+0330\n"
+"PO-Revision-Date: 2024-01-30 12:54+0330\n"
 "Last-Translator: Abolfazl Rezaee <rezaee.aboulfazl@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,15 +19,30 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\models.py:16
-#, fuzzy
-#| msgid "ProductDetail"
-msgid "Product Image"
+#: .\models.py:12
+msgid "title"
+msgstr "نام محصول"
+
+#: .\models.py:13
+#| msgid "Product Description"
+msgid "Description"
 msgstr "توضیحات محصول"
+
+#: .\models.py:14
+msgid "current-price"
+msgstr "قیمت اصلی"
+
+#: .\models.py:15
+msgid "last-price"
+msgstr "قیمت قبلی"
+
+#: .\models.py:16
+msgid "Product Image"
+msgstr "عکس محصول"
 
 #: .\models.py:18
 msgid "Date-Time of"
-msgstr ""
+msgstr "تاریخ انتشار"
 
 #: .\models.py:38
 msgid "Very Bad"
@@ -48,6 +63,14 @@ msgstr "خوب"
 #: .\models.py:42
 msgid "Perfect"
 msgstr "عالی"
+
+#: .\models.py:45
+msgid "comment author"
+msgstr "نویسنده دیدگاه"
+
+#: .\models.py:46
+msgid "comments"
+msgstr "دیدگاه"
 
 #: .\models.py:47
 msgid "Comment Text"
@@ -98,11 +121,11 @@ msgstr "محصولات"
 
 #: .\templates\products\product_list.html:24
 msgid "show"
-msgstr ""
+msgstr "نمایش"
 
 #: .\templates\products\product_list.html:24
 msgid "of"
-msgstr ""
+msgstr "از"
 
 #: .\templates\products\product_list.html:63
 msgid "Special Discount"

@@ -9,10 +9,10 @@ from django.shortcuts import reverse
 # Create your models here.
 
 class Product(models.Model):
-    title = models.CharField(max_length=120)
-    description = models.TextField()
-    price = models.PositiveIntegerField(default=50000)
-    s_price = models.PositiveIntegerField(default=0, null=True, blank=True)
+    title = models.CharField(max_length=120, verbose_name=_('title'))
+    description = models.TextField(_('Description'))
+    price = models.PositiveIntegerField(default=50000, verbose_name=_('current-price'))
+    s_price = models.PositiveIntegerField(default=0, null=True, blank=True, verbose_name=_('last-price'))
     image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover', blank=True,)
 
     datetime_created = models.DateTimeField(default=timezone.now, verbose_name=_('Date-Time of'))
@@ -42,7 +42,7 @@ class Comment(models.Model):
         ('5', _('Perfect')),
     ]
 
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments', verbose_name='comment author')
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments', verbose_name=_('comment author'))
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments',)
     body = models.TextField(verbose_name=_('Comment Text'))
     stars = models.CharField(max_length=10, choices=PRODUCT_STARS, verbose_name=_('What is the score?'))

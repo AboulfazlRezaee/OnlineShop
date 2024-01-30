@@ -5,6 +5,7 @@
 {% load crispy_forms_tags %}
 {% load comment_tags %}
 {% load jalali_tags %}
+{% load persian_translation_tags %}
 
 {% block page_title %}{% trans 'Detail' %} {{ product.title }}{% endblock page_title %}
 
@@ -45,12 +46,12 @@
                                 {{ product.description }}
                             </p>
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money text-success">{{ product.price }}{% trans '$' %}</span>
+                                <span class="money text-success">{{ product.price|translate_number }}{% trans '$' %}</span>
                                                           
                                 {% if product.s_price %}
                                 <span class="money-separator">-</span>
                                 <span class="old-price text-danger">
-                                    <span class="money old-price text-danger">{{ product.s_price }} {% trans '$' %}</span>
+                                    <span class="money old-price text-danger">{{ product.s_price|translate_number }} {% trans '$' %}</span>
                                 </span>                                
                               {% endif %}
                                 
@@ -90,7 +91,7 @@
                                     <span>ویژگی ها</span>
                                 </a>
                                 <a class="m-0 product-data-tab__link nav-link" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-selected="true">
-                                    <span>نظرات ({{ product.comments.all|only_active_comments|length }})</span>
+                                    <span>نظرات ({{ product.comments.all|only_active_comments|length|translate_number }})</span>
                                 </a>
                             </div>
                             <div class="tab-content product-data-tab__content" id="product-tabContent">
@@ -126,7 +127,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
                                     <div class="product-reviews">
-                                        <h3 class="review__title">{{ product.comments.all|only_active_comments|length }} نظر برای {{ product.title }}</h3>
+                                        <h3 class="review__title">{{ product.comments.all|only_active_comments|length|translate_number }} نظر برای {{ product.title }}</h3>
                                         
 
                                     <ul class="review__list">
@@ -138,8 +139,8 @@
                                                             <img src="{% static 'img/others/comment-1.jpg' %}" alt="Review Avatar" class="review__avatar p-3">
                                                             <div>
                                                                 <div class="review__meta" dir="ltr">
-                                                                    <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y %m %d ' }}</span>
-                                                                    <span class="review__dash">-</span>
+                                                                    <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y-%m-%d ' }}</span>
+                                                                    <span class="review__dash">  </span>
                                                                     <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                 </div>
                                                                 <div class="product-rating">
@@ -154,7 +155,7 @@
                                                                             
                                                                         {% endfor %} {% endcomment %}
                                                                             
-                                                                        <span class="px-4">Rated <strong class="rating">{{ comment.stars }}</strong> out of 5</span>
+                                                                        <span class="px-4">Rated <strong class="rating">{{ comment.stars|translate_number }}</strong> out of 5</span>
                                                                         <p class="review__description text-right px-4">
                                                                             {{ comment.body }}
                                                                         </p>
