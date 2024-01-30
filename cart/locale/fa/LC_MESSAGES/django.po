@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-27 17:20+0330\n"
-"PO-Revision-Date: 2024-01-26 19:12+0330\n"
+"POT-Creation-Date: 2024-01-30 16:27+0330\n"
+"PO-Revision-Date: 2024-01-30 16:28+0330\n"
 "Last-Translator: Abolfazl Rezaee <rezaee.aboulfazl@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -27,83 +27,96 @@ msgstr "کالا با موفقیت به سبد خرید شما اضافه شد."
 msgid "Product Successfully removed from Your Cart."
 msgstr "کلا با موفقیت از سبد خرید شما حذف شد."
 
-#: .\templates\cart\cart_detail.html:8
+#: .\templates\cart\cart_detail.html:10
 msgid "Cart Detail"
 msgstr "سبد خرید"
 
-#: .\templates\cart\cart_detail.html:31
-msgid "Shop"
-msgstr "فروشگاه"
-
-#: .\templates\cart\cart_detail.html:36
-msgid "Blog"
-msgstr "وبلاگ"
-
-#: .\templates\cart\cart_detail.html:41
-msgid "Pages"
-msgstr "صفحات"
-
-#: .\templates\cart\cart_detail.html:69
-msgid "Account"
-msgstr "حساب کاربری"
-
-#: .\templates\cart\cart_detail.html:72
-msgid "Logout"
-msgstr "خروج"
-
-#: .\templates\cart\cart_detail.html:75
-msgid "Favorite"
-msgstr "علاقه مندی ها"
-
-#: .\templates\cart\cart_detail.html:78
-msgid "Order history"
-msgstr "تاریخچه سفارشات"
-
-#: .\templates\cart\cart_detail.html:82
-msgid "Login"
-msgstr "ورود"
-
-#: .\templates\cart\cart_detail.html:85
-msgid "Signup"
-msgstr "ثبت نام"
-
-#: .\templates\cart\cart_detail.html:118 .\templates\cart\cart_sidebar.html:9
+#: .\templates\cart\cart_detail.html:16 .\templates\cart\cart_sidebar.html:11
 msgid "Cart"
 msgstr "سبد خرید"
 
-#: .\templates\cart\cart_detail.html:209
-msgid "Cart is Empty! Please Add some Products to Your Shopping Cart."
-msgstr "سبد خرید شما خالی است! لطفا اول کالای خود را انتخاب کنید."
+#: .\templates\cart\cart_detail.html:35
+msgid "product image"
+msgstr "عکس محصول"
 
-#: .\templates\cart\cart_detail.html:211
-msgid "Go Shopping"
-msgstr "خرید"
+#: .\templates\cart\cart_detail.html:36
+msgid "product name"
+msgstr "نام محصول"
 
-#: .\templates\cart\cart_detail.html:220
-msgid "Empty Your Cart"
-msgstr "خالی کردن سبد خرید"
+#: .\templates\cart\cart_detail.html:37
+msgid "price"
+msgstr "قیمت"
 
-#: .\templates\cart\cart_detail.html:227
-msgid "Sum of them"
+#: .\templates\cart\cart_detail.html:38
+msgid "quantity"
+msgstr "تعداد"
+
+#: .\templates\cart\cart_detail.html:39
+#| msgid "Total"
+msgid "total"
 msgstr "مجموع"
 
-#: .\templates\cart\cart_detail.html:235 .\templates\cart\cart_sidebar.html:28
-#: .\templates\cart\cart_sidebar.html:37
+#: .\templates\cart\cart_detail.html:69 .\templates\cart\cart_detail.html:98
+#: .\templates\cart\cart_detail.html:135 .\templates\cart\cart_sidebar.html:35
+#: .\templates\cart\cart_sidebar.html:44
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\cart\cart_detail.html:242
+#: .\templates\cart\cart_detail.html:109
+msgid "Cart is Empty! Please Add some Products to Your Shopping Cart."
+msgstr "سبد خرید شما خالی است! لطفا اول کالای خود را انتخاب کنید."
+
+#: .\templates\cart\cart_detail.html:111
+msgid "Go Shopping"
+msgstr "خرید"
+
+#: .\templates\cart\cart_detail.html:120
+msgid "Empty Your Cart"
+msgstr "خالی کردن سبد خرید"
+
+#: .\templates\cart\cart_detail.html:127
+msgid "Sum of them"
+msgstr "مجموع"
+
+#: .\templates\cart\cart_detail.html:142
 msgid "Order"
 msgstr "ثبت سفارش"
 
-#: .\templates\cart\cart_sidebar.html:36
+#: .\templates\cart\cart_sidebar.html:43
 msgid "Total"
 msgstr "جمع کل"
 
-#: .\templates\cart\cart_sidebar.html:40
+#: .\templates\cart\cart_sidebar.html:47
 msgid "Go to Cart"
 msgstr "مشاهده سبد خرید"
 
-#: .\templates\cart\cart_sidebar.html:41
+#: .\templates\cart\cart_sidebar.html:48
 msgid "Checkout"
 msgstr "پرداخت"
+
+#~ msgid "Shop"
+#~ msgstr "فروشگاه"
+
+#~ msgid "Blog"
+#~ msgstr "وبلاگ"
+
+#~ msgid "Pages"
+#~ msgstr "صفحات"
+
+#~ msgid "Account"
+#~ msgstr "حساب کاربری"
+
+#~ msgid "Logout"
+#~ msgstr "خروج"
+
+#~ msgid "Favorite"
+#~ msgstr "علاقه مندی ها"
+
+#~ msgid "Order history"
+#~ msgstr "تاریخچه سفارشات"
+
+#~ msgid "Login"
+#~ msgstr "ورود"
+
+#~ msgid "Signup"
+#~ msgstr "ثبت نام"
