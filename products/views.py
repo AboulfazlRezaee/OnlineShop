@@ -15,7 +15,8 @@ class ProductListView(generic.ListView):
     context_object_name = 'products'
     #sort by datetime_update
     ordering = ['-datetime_modified']
-    paginate_by = 10
+    paginate_by = 4
+
     
 
 class ProductDetailView(generic.DetailView):

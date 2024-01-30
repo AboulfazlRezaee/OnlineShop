@@ -4,6 +4,7 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% load comment_tags %}
+{% load jalali_tags %}
 
 {% block page_title %}{% trans 'Detail' %} {{ product.title }}{% endblock page_title %}
 
@@ -19,13 +20,23 @@
             <div class="container">
                 <div class="row no-gutters mb--80">
                     <div class="col-12 col-sm-4 product-main-image d-flex align-content-center">
-                        
-                        {% if product.image %}
-                            <img class="m-auto" style="max-height: 400px;" src="{{ product.image.url }}" alt="">
-                        {% else %}
-                            <img class="m-auto" style="max-height: 400px;" src="{% static 'img/products/prod-1.jpg' %}" alt="">
-                        {% endif %}
-                        
+                        <div class="row">
+                            <div class="col-9">
+                                {% if product.image %}
+                                    <img class="m-auto" style="max-height: 350px;" src="{{ product.image.url }}" alt="">
+                                {% else %}
+                                    <img class="m-auto" style="max-height: 350px;" src="{% static 'img/products/prod-1.jpg' %}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="col-9 mt-4">
+                                <nav class="pagination-wrap">
+                                    <ul class="pagination">
+                                        <li><a href="#" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
+                                        <li><a href="#" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 col-sm-8 product-main-details mt-md--50">
                         <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
@@ -126,8 +137,8 @@
                                                         <div class="d-flex flex-sm-row flex-row">
                                                             <img src="{% static 'img/others/comment-1.jpg' %}" alt="Review Avatar" class="review__avatar p-3">
                                                             <div>
-                                                                <div class="review__meta">
-                                                                    <span class="review__published-date">{{ comment.datetime_created }}</span>
+                                                                <div class="review__meta" dir="ltr">
+                                                                    <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y %m %d ' }}</span>
                                                                     <span class="review__dash">-</span>
                                                                     <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                 </div>
@@ -143,13 +154,13 @@
                                                                             
                                                                         {% endfor %} {% endcomment %}
                                                                             
-                                                                        <span>Rated <strong class="rating">{{ comment.stars }}</strong> out of 5</span>
+                                                                        <span class="px-4">Rated <strong class="rating">{{ comment.stars }}</strong> out of 5</span>
+                                                                        <p class="review__description text-right px-4">
+                                                                            {{ comment.body }}
+                                                                        </p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <p class="review__description text-right px-4 mr-5 pr-5">
-                                                            {{ comment.body }}
-                                                        </p>
                                                     </div>
                                                 </div>
                                             </li>                                                                          

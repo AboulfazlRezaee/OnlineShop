@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #3rd party
+    'jalali_date',
     'crispy_forms',
     'crispy_bootstrap4',
     'allauth',

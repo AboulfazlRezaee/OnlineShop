@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth import get_user_model
 from django.db.models.query import QuerySet
 from django.utils.translation import gettext_lazy as _
@@ -14,11 +15,10 @@ class Product(models.Model):
     s_price = models.PositiveIntegerField(default=0, null=True, blank=True)
     image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover', blank=True,)
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_created = models.DateTimeField(default=timezone.now, verbose_name=_('Date-Time of'))
     datetime_modified = models.DateTimeField(auto_now=True)
 
     active = models.BooleanField(default=True)
-    
     
     def __str__(self):
         return self.title
