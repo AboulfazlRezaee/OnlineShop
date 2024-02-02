@@ -13,8 +13,12 @@ def category(request, slug):
 
     try:
         category = Category.objects.get(name=slug)
-        products = Product.objects.filter(category=category, active=True)
-        return render(request, 'products/category_list.html', {'products': products, 'category': category})
+        products = Product.objects.filter(category=category, active=True).order_by('-datetime_modified')
+        context = {
+            'products': products,
+            'category': category,
+            }
+        return render(request, 'products/category_list.html', context)
     except:
         messages.error(request, _("That Category doesn't exist!"))
         return redirect('product_list')

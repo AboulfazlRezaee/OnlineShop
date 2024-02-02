@@ -62,6 +62,20 @@
                                             <span class="mm-text">{% trans 'Pages' %}</span>
                                         </a>
                                     </li>
+                                    {% comment %} <li class="header-toolbar__item user-info">
+                                        <span>{% trans 'category' %}</span>
+                                        <ul class="user-info-menu">
+                                            
+                                            {% for category in products  %}
+                                                <li class="user-info-menu__item">
+                                                    <a href="{% url 'product_list' %}">
+                                                        <span class="mm-text">some</span>
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+
+                                        </ul>
+                                    </li> {% endcomment %}
                                 </ul>
                             </div>
                         </nav>
