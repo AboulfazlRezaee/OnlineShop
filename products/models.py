@@ -9,9 +9,19 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length=100, verbose_name=_('name'))
+
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
     title = models.CharField(max_length=120, verbose_name=_('title'))
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True, verbose_name=_('Category'))
     description = RichTextField(_('Description'))
+    short_description = models.TextField(_('Short Description'), max_length=500, blank=True)
+    weight = models.PositiveIntegerField(_('Weight'), null=True, blank=True)
+    color = models.CharField(_('Color'), max_length=100, blank=True)
     price = models.PositiveIntegerField(default=50000, verbose_name=_('current-price'))
     s_price = models.PositiveIntegerField(default=0, null=True, blank=True, verbose_name=_('last-price'))
     image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover', blank=True,)

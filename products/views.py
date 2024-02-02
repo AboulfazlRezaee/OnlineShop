@@ -1,12 +1,24 @@
 from django.views import generic
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
 
-from .models import Product, Comment
+from .models import Product, Comment, Category
 from .forms import CommentForm
 
 # Create your views here.
+
+def category(request, slug):
+    slug = slug.replace('-', ' ')
+
+    try:
+        category = Category.objects.get(name=slug)
+        products = Product.objects.filter(category=category, active=True)
+        return render(request, 'products/category_list.html', {'products': products, 'category': category})
+    except:
+        messages.error(request, _("That Category doesn't exist!"))
+        return redirect('product_list')
+
 
 class ProductListView(generic.ListView):
     # model = Product

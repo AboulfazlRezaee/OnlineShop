@@ -43,9 +43,9 @@
                     <div class="col-12 col-sm-8 product-main-details mt-md--50">
                         <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
-                            {% comment %} <p class="product-short-description mb--20">
-                                {{ product.description }}
-                            </p> {% endcomment %}
+                            <p class="product-short-description mb--20">
+                                {{ product.short_description|truncatechars:100 }}
+                            </p> 
                             <div class="my-5 py-5 product-price-wrapper mb--25">
                                 <span class="money text-success">{{ product.price|intcomma:False|translate_number }}{% trans '$' %}</span>
                                                           
@@ -107,7 +107,7 @@
                                             <tbody>
                                                 <tr>
                                                     <th>وزن</th>
-                                                    <td>۴۳۰ گرم</td>
+                                                    <td>{{ product.weight|translate_number }} گرم</td>
                                                 </tr>
                                                 <tr>
                                                     <th>سایز</th>
@@ -116,10 +116,7 @@
                                                 <tr>
                                                     <th>رنگ</th>
                                                     <td>
-                                                        <a href="shop-sidebar.html">مشکی</a>,
-                                                        <a href="shop-sidebar.html">سبز</a>,
-                                                        <a href="shop-sidebar.html">قرمز</a>,
-                                                        <a href="shop-sidebar.html">نارنجی</a>,
+                                                        <span>{{ product.color }}</span>,
                                                     </td>
                                                 </tr>
                                             </tbody>

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 12:54+0330\n"
-"PO-Revision-Date: 2024-01-30 12:54+0330\n"
+"POT-Creation-Date: 2024-01-31 18:14+0330\n"
+"PO-Revision-Date: 2024-01-31 18:15+0330\n"
 "Last-Translator: Abolfazl Rezaee <rezaee.aboulfazl@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,115 +19,176 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\models.py:12
+#: .\models.py:13
+msgid "name"
+msgstr "نام"
+
+#: .\models.py:19
 msgid "title"
 msgstr "نام محصول"
 
-#: .\models.py:13
-#| msgid "Product Description"
+#: .\models.py:20
+#| msgid "Categories"
+msgid "Category"
+msgstr "دسته بندی ها"
+
+#: .\models.py:21
 msgid "Description"
 msgstr "توضیحات محصول"
 
-#: .\models.py:14
+#: .\models.py:22
+msgid "Short Description"
+msgstr "توضیحات کوتاه"
+
+#: .\models.py:23
+msgid "Weight"
+msgstr "وزن"
+
+#: .\models.py:24
+msgid "Color"
+msgstr "رنگ"
+
+#: .\models.py:25
 msgid "current-price"
 msgstr "قیمت اصلی"
 
-#: .\models.py:15
+#: .\models.py:26
 msgid "last-price"
 msgstr "قیمت قبلی"
 
-#: .\models.py:16
+#: .\models.py:27
 msgid "Product Image"
 msgstr "عکس محصول"
 
-#: .\models.py:18
+#: .\models.py:29
 msgid "Date-Time of"
 msgstr "تاریخ انتشار"
 
-#: .\models.py:38
+#: .\models.py:49
 msgid "Very Bad"
 msgstr "خیلی بد"
 
-#: .\models.py:39
+#: .\models.py:50
 msgid "Bad"
 msgstr "بد"
 
-#: .\models.py:40
+#: .\models.py:51
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\models.py:41
+#: .\models.py:52
 msgid "Good"
 msgstr "خوب"
 
-#: .\models.py:42
+#: .\models.py:53
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\models.py:45
+#: .\models.py:56
 msgid "comment author"
 msgstr "نویسنده دیدگاه"
 
-#: .\models.py:46
-msgid "comments"
-msgstr "دیدگاه"
-
-#: .\models.py:47
+#: .\models.py:58
 msgid "Comment Text"
 msgstr "متن دیدگاه"
 
-#: .\models.py:48
+#: .\models.py:59
 msgid "What is the score?"
 msgstr "امتیاز شما"
 
-#: .\templates\products\product_detail.html:9
-msgid "Detail"
-msgstr "جزئیات"
+#: .\templates\products\head_and_foot.html:21
+msgid "Shop"
+msgstr "فروشگاه"
 
-#: .\templates\products\product_detail.html:48
-#: .\templates\products\product_detail.html:53
-#: .\templates\products\product_list.html:72
-msgid "$"
-msgstr "تومان"
+#: .\templates\products\head_and_foot.html:26
+msgid "Blog"
+msgstr "وبلاگ"
 
-#: .\templates\products\product_detail.html:66
-#: .\templates\products\product_list.html:83
-msgid "Add to Cart"
-msgstr "اضافه به سبد خرید"
+#: .\templates\products\head_and_foot.html:31
+msgid "Pages"
+msgstr "صفحات"
 
-#: .\templates\products\product_detail.html:88
-msgid "Product Description"
-msgstr "توضیحات محصول"
+#: .\templates\products\head_and_foot.html:59
+msgid "Account"
+msgstr "حساب کاربری"
 
-#: .\templates\products\product_detail.html:178
-msgid "Write Your Comment"
-msgstr "نظر خودرا بنویسید"
+#: .\templates\products\head_and_foot.html:62
+msgid "Logout"
+msgstr "خروج"
 
-#: .\templates\products\product_detail.html:186
-msgid "Submit"
-msgstr "ارسال"
+#: .\templates\products\head_and_foot.html:65
+msgid "Favorite"
+msgstr "علاقه مندی ها"
 
-#: .\templates\products\product_detail.html:192
-msgid "plesae login that can you submit your comment."
-msgstr "لطفا برای نوشتن دیدگاه خود وارد حساب کاربری خود شوید."
+#: .\templates\products\head_and_foot.html:68
+msgid "Order history"
+msgstr "تاریخچه سفارشات"
 
-#: .\templates\products\product_detail.html:195
+#: .\templates\products\head_and_foot.html:72
+#: .\templates\products\product_detail.html:194
 msgid "Login"
 msgstr "ورود"
 
-#: .\templates\products\product_list.html:6
+#: .\templates\products\head_and_foot.html:75
+msgid "Signup"
+msgstr "ثبت نام"
+
+#: .\templates\products\head_and_foot.html:114
+msgid "About Us"
+msgstr "درباره ما"
+
+#: .\templates\products\head_and_foot.html:117
+msgid "Terms and Conditions"
+msgstr "قوانین و مقرارات"
+
+#: .\templates\products\head_and_foot.html:120
+msgid "Contact Us"
+msgstr "تماس با ما"
+
+#: .\templates\products\product_detail.html:11
+msgid "Detail"
+msgstr "جزئیات"
+
+#: .\templates\products\product_detail.html:50
+#: .\templates\products\product_detail.html:55
+#: .\templates\products\product_list.html:74
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\products\product_detail.html:68
+#: .\templates\products\product_list.html:85
+msgid "Add to Cart"
+msgstr "اضافه به سبد خرید"
+
+#: .\templates\products\product_detail.html:90
+msgid "Product Description"
+msgstr "توضیحات محصول"
+
+#: .\templates\products\product_detail.html:177
+msgid "Write Your Comment"
+msgstr "نظر خودرا بنویسید"
+
+#: .\templates\products\product_detail.html:185
+msgid "Submit"
+msgstr "ارسال"
+
+#: .\templates\products\product_detail.html:191
+msgid "plesae login that can you submit your comment."
+msgstr "لطفا برای نوشتن دیدگاه خود وارد حساب کاربری خود شوید."
+
+#: .\templates\products\product_list.html:8
 msgid "ProductsList"
 msgstr "محصولات"
 
-#: .\templates\products\product_list.html:24
+#: .\templates\products\product_list.html:26
 msgid "show"
 msgstr "نمایش"
 
-#: .\templates\products\product_list.html:24
+#: .\templates\products\product_list.html:26
 msgid "of"
 msgstr "از"
 
-#: .\templates\products\product_list.html:63
+#: .\templates\products\product_list.html:65
 msgid "Special Discount"
 msgstr "تخفیف ویژه"
 
@@ -139,8 +200,8 @@ msgstr "دیدگاه شما با موفقیت ثبت شد."
 msgid "Form is not valid. Please check your input."
 msgstr "لطفا فرم ثبت دیدگاه را دقیق پر کنید"
 
-#~ msgid "Categories"
-#~ msgstr "دسته بندی ها"
+#~ msgid "comments"
+#~ msgstr "دیدگاه"
 
 #~ msgid "Clothing"
 #~ msgstr "لباس"
@@ -153,36 +214,3 @@ msgstr "لطفا فرم ثبت دیدگاه را دقیق پر کنید"
 
 #~ msgid "ladieswear"
 #~ msgstr "زنانه"
-
-#~ msgid "About Us"
-#~ msgstr "درباره ما"
-
-#~ msgid "Terms and Conditions"
-#~ msgstr "قوانین و مقرارات"
-
-#~ msgid "Contact Us"
-#~ msgstr "تماس با ما"
-
-#~ msgid "Shop"
-#~ msgstr "فروشگاه"
-
-#~ msgid "Blog"
-#~ msgstr "وبلاگ"
-
-#~ msgid "Pages"
-#~ msgstr "صفحات"
-
-#~ msgid "Account"
-#~ msgstr "حساب کاربری"
-
-#~ msgid "Logout"
-#~ msgstr "خروج"
-
-#~ msgid "Favorite"
-#~ msgstr "علاقه مندی ها"
-
-#~ msgid "Order history"
-#~ msgstr "تاریخچه سفارشات"
-
-#~ msgid "Signup"
-#~ msgstr "ثبت نام"
