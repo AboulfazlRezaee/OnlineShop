@@ -104,6 +104,9 @@
                                             <a class="text-right" href="my-account.html">{% trans 'Account' %}</a>
                                         </li>
                                         <li>
+                                            <a class="text-right" href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}</a>
+                                        </li>
+                                        <li>
                                             <a class="text-right" href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
                                         </li>
                                         <li>
@@ -118,6 +121,9 @@
                                         </li>
                                         <li>
                                             <a class="text-right" href="{% url 'account_signup' %}">{% trans 'Signup' %}</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-right" href="{% url 'cart:cart_detail' %}">{% trans 'Cart' %}</a>
                                         </li>
                                     {% endif %}                                       
                                 </ul>
