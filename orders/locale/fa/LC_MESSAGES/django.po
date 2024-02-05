@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-04 20:21+0330\n"
-"PO-Revision-Date: 2024-02-04 20:23+0330\n"
+"POT-Creation-Date: 2024-02-05 20:19+0330\n"
+"PO-Revision-Date: 2024-02-05 20:21+0330\n"
 "Last-Translator: Abolfazl Rezaee <rezaee.aboulfazl@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\models.py:9
+#: .\models.py:10
 msgid "Is Paid"
 msgstr "پرداخت شد"
 
-#: .\models.py:11
+#: .\models.py:12 .\templates\orders\order_create.html:45
 msgid "First Name"
 msgstr "نام"
 
-#: .\models.py:12
+#: .\models.py:13 .\templates\orders\order_create.html:49
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
-#: .\models.py:13
+#: .\models.py:14 .\templates\orders\order_create.html:61
 msgid "Phone Number"
 msgstr "تلفن همراه"
 
-#: .\models.py:14
+#: .\models.py:15 .\templates\orders\order_create.html:55
 msgid "Address"
 msgstr "آدرس"
 
-#: .\models.py:15
+#: .\models.py:16 .\templates\orders\order_create.html:67
 msgid "Zipcode"
 msgstr "کد پستی"
 
-#: .\models.py:16
+#: .\models.py:17 .\templates\orders\order_create.html:73
 msgid "Order Note"
 msgstr "توضیحات سفارش"
 
-#: .\models.py:18
+#: .\models.py:19
 msgid "Date-Time of"
 msgstr "تاریخ "
 
-#: .\models.py:26
+#: .\models.py:27
 msgid "products"
 msgstr "محصولات"
 
-#: .\models.py:27
+#: .\models.py:28
 msgid "Quantity"
 msgstr "تعداد"
 
-#: .\models.py:28
+#: .\models.py:29
 msgid "Price"
 msgstr "قیمت"
 
@@ -70,3 +70,40 @@ msgstr "سفارشات"
 #: .\templates\orders\order_create.html:17
 msgid "Order List"
 msgstr "لیست سفارشات"
+
+#: .\templates\orders\order_create.html:77
+msgid "Submit"
+msgstr "ارسال"
+
+#: .\templates\orders\order_create.html:84
+msgid "Your Orders"
+msgstr "سفارشات"
+
+#: .\templates\orders\order_create.html:90
+msgid "product"
+msgstr "محصولات"
+
+#: .\templates\orders\order_create.html:91
+msgid "final price"
+msgstr "قیمت نهایی"
+
+#: .\templates\orders\order_create.html:101
+#: .\templates\orders\order_create.html:109
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\orders\order_create.html:108
+msgid "Total"
+msgstr "جمع کل"
+
+#: .\templates\orders\order_create.html:115
+msgid "payment option"
+msgstr "روش پرداخت"
+
+#: .\views.py:17
+msgid "You Cannot Create An Order With An Empty Cart."
+msgstr "ثبت سفارش تا زمانی که سبد خرید خالی است امکان پذیر نمی باشد."
+
+#: .\views.py:43
+msgid "Your Order Successfully Created."
+msgstr "سفارش شما با موفقیت ثبت شد."

@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
     'ckeditor',
+    'phonenumber_field',
+    'phonenumbers',
 
     #my apps
     'accounts',

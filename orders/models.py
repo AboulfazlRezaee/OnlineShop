@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -10,7 +11,7 @@ class Order(models.Model):
 
     first_name = models.CharField(_('First Name'), max_length=100)
     last_name = models.CharField(_('Last Name'), max_length=80)
-    phone = models.CharField(_("Phone Number"), max_length=12)
+    phone = PhoneNumberField(_("Phone Number"))
     address = models.CharField(_("Address"), max_length=700)
     zipcode = models.CharField(_("Zipcode"), max_length=10)
     order_note = models.CharField(_("Order Note"), max_length=500, blank=True)
