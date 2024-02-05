@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 16:27+0330\n"
-"PO-Revision-Date: 2024-01-30 16:28+0330\n"
+"POT-Creation-Date: 2024-02-05 21:56+0330\n"
+"PO-Revision-Date: 2024-02-05 22:02+0330\n"
 "Last-Translator: Abolfazl Rezaee <rezaee.aboulfazl@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -52,12 +52,11 @@ msgid "quantity"
 msgstr "تعداد"
 
 #: .\templates\cart\cart_detail.html:39
-#| msgid "Total"
 msgid "total"
 msgstr "مجموع"
 
 #: .\templates\cart\cart_detail.html:69 .\templates\cart\cart_detail.html:98
-#: .\templates\cart\cart_detail.html:135 .\templates\cart\cart_sidebar.html:35
+#: .\templates\cart\cart_detail.html:139 .\templates\cart\cart_sidebar.html:35
 #: .\templates\cart\cart_sidebar.html:44
 msgid "$"
 msgstr "تومان"
@@ -70,21 +69,21 @@ msgstr "سبد خرید شما خالی است! لطفا اول کالای خو�
 msgid "Go Shopping"
 msgstr "خرید"
 
-#: .\templates\cart\cart_detail.html:120
+#: .\templates\cart\cart_detail.html:122
 msgid "Empty Your Cart"
 msgstr "خالی کردن سبد خرید"
 
-#: .\templates\cart\cart_detail.html:127
+#: .\templates\cart\cart_detail.html:131
 msgid "Sum of them"
 msgstr "مجموع"
 
-#: .\templates\cart\cart_detail.html:142
-msgid "Order"
-msgstr "ثبت سفارش"
-
-#: .\templates\cart\cart_sidebar.html:43
+#: .\templates\cart\cart_detail.html:135 .\templates\cart\cart_sidebar.html:43
 msgid "Total"
 msgstr "جمع کل"
+
+#: .\templates\cart\cart_detail.html:146
+msgid "Order"
+msgstr "ثبت سفارش"
 
 #: .\templates\cart\cart_sidebar.html:47
 msgid "Go to Cart"
@@ -93,6 +92,14 @@ msgstr "مشاهده سبد خرید"
 #: .\templates\cart\cart_sidebar.html:48
 msgid "Checkout"
 msgstr "پرداخت"
+
+#: .\views.py:52
+msgid "You Cannot Clear An Empty Cart."
+msgstr "امکان خالی کردن سبد خرید خالی وجود ندارد!!"
+
+#: .\views.py:55
+msgid "Your Cart Successfully Cleared."
+msgstr "سبد خرید شما با موفقیت خالی شد."
 
 #~ msgid "Shop"
 #~ msgstr "فروشگاه"

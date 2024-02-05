@@ -43,10 +43,14 @@
                     <span>{% trans "Total" %}</span>
                     <span class="ammount">{{ cart.get_total_price|intcomma:False|translate_number }} {% trans '$' %}</span>
                 </div>
-                <div class="mini-cart__buttons">
-                    <a href="{% url 'cart:cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">{% trans "Go to Cart" %}</a>
-                    <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">{% trans "Checkout" %}</a>
-                </div>
+                
+                {% if cart|length %}
+                    <div class="mini-cart__buttons">
+                        <a href="{% url 'cart:cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">{% trans "Go to Cart" %}</a>
+                        <a href="{% url 'order_create' %}" class="btn btn-fullwidth btn-bg-sand">{% trans "Checkout" %}</a>
+                    </div>                   
+                {% endif %}
+                    
             </div>
         </div>
     </div>

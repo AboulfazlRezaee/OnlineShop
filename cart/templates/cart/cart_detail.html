@@ -115,18 +115,23 @@
                                         
                                 </div>
                             </div>
-                            <div class="row no-gutters border-top pt--20 mt--20">
-                                <div class="col-sm-6 text-sm-right">
-                                    <a href="{% url 'cart:clear_cart' %}">
-                                        <button type="submit" class="cart-form__btn">
-                                            {% trans 'Empty Your Cart' %}
-                                        </button>
-                                    </a>
+                            
+                            {% if cart|length %}
+                                <div class="row no-gutters border-top pt--20 mt--20">
+                                    <div class="col-sm-6 text-sm-right">
+                                        <form action="{% url 'cart:clear_cart' %}" method="POST">
+                                            {% csrf_token %}
+                                                <button type="submit" class="cart-form__btn">
+                                                    {% trans 'Empty Your Cart' %}
+                                                </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
+                                
                         </div>
                         <div class="col-lg-4">
-                            <div class="cart-collaterals">
+                            <div class="cart-collaterals" style="border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
                                 <div class="cart-totals">
                                     <h5 class="font-size-14 font-bold mb--15">{% trans 'Sum of them' %}</h5>
                                     <div class="cart-calculator">

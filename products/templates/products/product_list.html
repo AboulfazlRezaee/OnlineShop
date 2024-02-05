@@ -41,7 +41,7 @@
                                       
                                       {% for product in products %}
                                         <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
-                                          <div class="ShoppingYar-product">
+                                          <div class="ShoppingYar-product" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius:10px;">
                                               <div class="product-inner">
                                                   <figure class="product-image">
                                                       <a href="{{ product.get_absolute_url }}">
@@ -81,8 +81,15 @@
                                                           {% endif %}
                                                             
                                                       </div>
-                                                      <a href="{{ product.get_absolute_url }}" class="btn btn-small btn-bg-sand btn-color-dark px-3">
-                                                        {% trans "Add to Cart" %}
+                                                      <form action="{% url 'cart:add_to_cart' product.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <div class="quantity-wrapper justify-content-start">
+                                                            <input type="hidden" class="quantity-input" name="quantity" id="qty" value="1" min="1" max="30">
+                                                            <button type="submit" class="btn btn-small btn-bg-sand btn-color-dark px-3">
+                                                                {% trans "Add to Cart" %}
+                                                            </button>
+                                                        </div>
+                                                        </form>
                                                       </a>
                                                   </div>
                                               </div>
