@@ -16,11 +16,16 @@ class Order(models.Model):
     zipcode = models.CharField(_("Zipcode"), max_length=10)
     order_note = models.CharField(_("Order Note"), max_length=500, blank=True)
 
+    authority = models.CharField(_("Authority"), max_length=255, blank=True)
+
     datetime_created = models.DateTimeField(_('Date-Time of'), auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'Order {self.id}'
+    
+    def get_total_price(self):
+        return sum(item.price * item.quantity for item in self.items.all())
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="items")
