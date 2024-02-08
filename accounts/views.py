@@ -1,13 +1,9 @@
 # from django.shortcuts import render
-# from django.views.generic import CreateView
-# from django.urls import reverse_lazy
+from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect
 
-# from .forms import CustomUserCreationForm
-
-# # Create your views here.
+# Create your views here.
 
 
-# class SignUpView(CreateView):
-#     form_class = CustomUserCreationForm
-#     template_name = 'registration/signup.html'
-#     success_url = reverse_lazy('login')
+def account_detail(request):
+    return render(request, 'accounts/account_detail.html')

@@ -1,16 +1,48 @@
 {% extends '_base.html' %}
-{% load crispy_forms_tags %}
 
-{% block page_title %}Login{% endblock page_title %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load comment_tags %}
+{% load jalali_tags %}
+{% load persian_translation_tags %}
+{% load humanize %}
+
+
+{% block page_title %}{% trans "Login" %}{% endblock page_title %}
 
 
 {% block content %}
-<h1>Login</h1>
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Log in">
-</form>
+<!-- Main Content Wrapper Start -->
+<div class="main-content-wrapper">
+    <div class="page-content-inner pt--75 pb--80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-sm--50">
+                    <div class="login-box">
+                        <h3 class="heading__tertiary mb--30">{% trans "Login" %}</h3>
+                        <form class="form form--login" method="post">
+                            {% csrf_token %}
+                            <div class="form__group ">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                            </div>
+                            
+                            <div class="d-flex align-items-center mt--20">
+                                <div class="form__group">
+                                    <input type="submit" value="ورود" class="btn-submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Content Wrapper Start -->
+
+
 {% endblock content %}
     

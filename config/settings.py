@@ -198,8 +198,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #accounts config
 AUTH_USER_MODEL = 'accounts.CustomUser'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'account_detail'
+LOGOUT_REDIRECT_URL = 'product_list'
 
 #allauth settings
 # ACCOUNT_EMAIL_VERIFICATION = "none"

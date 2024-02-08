@@ -1,16 +1,46 @@
 {% extends '_base.html' %}
-{% load crispy_forms_tags %}
 
-{% block page_title %}Sign Up{% endblock page_title %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load comment_tags %}
+{% load jalali_tags %}
+{% load persian_translation_tags %}
+{% load humanize %}
+
+
+{% block page_title %}{% trans "Signup" %}{% endblock page_title %}
 
 
 {% block content %}
-<h1>Signup</h1>
 
-<form action="" method="post" class="mt-4">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Sign Up" />
-</form>
+<!-- Main Content Wrapper Start -->
+<div class="main-content-wrapper">
+    <div class="page-content-inner pt--75 pb--80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="register-box">
+                        <h4 class="heading__tertiary mb--30">{% trans "Signup" %}</h4>
+                        <form class="form form--login" method="post">
+                            {% csrf_token %}
+                            <div class="form__group ">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                            </div>    
+                        
+                            <div class="form__group">
+                                <input type="submit" value="ثبت نام" class="btn btn-submit btn-style-1">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Content Wrapper Start -->
+
+
 {% endblock content %}
     

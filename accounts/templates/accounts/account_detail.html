@@ -29,11 +29,11 @@
                                 <a class="nav-link" data-toggle="pill" role="tab" href="#orders" aria-controls="orders" aria-selected="true">تاریخچه سفارشات</a>
                                 <a class="nav-link" data-toggle="pill" role="tab" href="#addresses" aria-controls="addresses" aria-selected="true">علاقه مندی ها</a>
                                 <a class="nav-link" data-toggle="pill" role="tab" href="#accountdetails" aria-controls="accountdetails" aria-selected="true">جزئیات پروفایل</a>
-                                <a class="nav-link" href="login-register.html">خروج</a>
+                                <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
                             </div>
                             <div class="user-dashboard-tab__content tab-content p-4">
                                 <div class="tab-pane fade show active" id="dashboard">
-                                    <p>سلام <strong>Hadi</strong></p>
+                                    <p>سلام <strong>{{ user.username }}</strong></p>
                                     <p>از منوی این قسمت میتوانید اطلاعات خودتان را بررسی کنید.</p>
                                 </div>
                                 <div class="tab-pane fade" id="orders">
@@ -59,13 +59,6 @@
                                                     <td>در حال بررسی</td>
                                                     <td class="wide-column">۱,۲۱۳,۰۰۰ تومان</td>
                                                     <td><a href="product-details.html" class="btn btn-small btn-bg-red btn-color-white btn-hover-2">نمایش</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td class="wide-column">September 19, 2018</td>
-                                                    <td>Processing</td>
-                                                    <td class="wide-column">$49.00 for 1 item</td>
-                                                    <td><a href="product-details.html" class="btn btn-small btn-bg-red btn-color-white btn-hover-2">View</a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
