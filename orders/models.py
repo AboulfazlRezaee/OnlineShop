@@ -16,7 +16,9 @@ class Order(models.Model):
     zipcode = models.CharField(_("Zipcode"), max_length=10)
     order_note = models.CharField(_("Order Note"), max_length=500, blank=True)
 
-    authority = models.CharField(_("Authority"), max_length=255, blank=True)
+    zarinpal_authority = models.CharField(max_length=255, blank=True)
+    zarinpal_ref_id = models.CharField(max_length=150, blank=True)
+    zarinpal_data = models.TextField(blank=True)
 
     datetime_created = models.DateTimeField(_('Date-Time of'), auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
