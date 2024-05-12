@@ -32,7 +32,7 @@ class ProductListView(generic.ListView):
 
     #sort by datetime_update
     ordering = ['-datetime_modified']
-    paginate_by = 6
+    paginate_by = 12
 
     
 
